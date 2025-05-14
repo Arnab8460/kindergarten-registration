@@ -66,5 +66,12 @@ class ChildController extends Controller
         return redirect()->back()->with('success', 'Child Registered Successfully!');
 
     }
+    public function profile()
+    {
+        $childprofile=Child::get();
+        $pickupperson=PickupPerson::get();
+        return view('profileview',compact('childprofile','pickupperson'));
+    }
+    
 }
 
